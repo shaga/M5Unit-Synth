@@ -345,3 +345,9 @@ void M5UnitSynth::reset() {
     uint8_t CMD_SYSTEM_RESET[] = {MIDI_CMD_SYSTEM_RESET};
     sendCMD(CMD_SYSTEM_RESET, sizeof(CMD_SYSTEM_RESET));
 }
+
+void M5UnitSynth::setControlChange(uint8_t channel, uint8_t control, uint8_t value) {
+    uint8_t CMD_CONTROL_CHANGE[] = {
+        (uint8_t)(MIDI_CMD_CONTROL_CHANGE | (channel & 0x0f)), control, value};
+    sendCMD(CMD_CONTROL_CHANGE, sizeof(CMD_CONTROL_CHANGE));
+}

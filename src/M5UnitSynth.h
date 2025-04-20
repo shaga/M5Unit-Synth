@@ -82,6 +82,8 @@ class M5UnitSynth {
     void setAllInstrumentDrums();
 
     void reset();
+
+    void setControlChange(uint8_t channel, uint8_t control, uint8_t value);
 };
 
 #endif
